@@ -55,8 +55,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ButtonManager.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\StartAnimation.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>E:/2DRPGGame(191104)/Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

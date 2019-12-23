@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public int score = 10;
-    // Start is called before the first frame update
+    public int Itemscore=10;
+    ScoreManager score;
+
+    void Start()
+    {
+        score = GetComponent<ScoreManager>();
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        
+       score.setScore(Itemscore);
     }
     
     void Update()
