@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    public GameObject explosion;
     public int Itemscore=10;
-    ScoreManager score;
+    Player player;
 
     void Start()
     {
-        score = GetComponent<ScoreManager>();
+        player = FindObjectOfType<Player>();
     }
 
     void OnTriggerEnter(Collider other)
     {
-       score.setScore(Itemscore);
+        Instantiate(explosion, transform.position, transform.rotation);
+            player.AddScore(Itemscore);
+            this.gameObject.SetActive(false);
+   
     }
     
     void Update()

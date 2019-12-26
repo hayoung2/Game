@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -11,13 +12,10 @@ public class ButtonManager : MonoBehaviour
         return isStart;
     }
 
-    public void SetIsStart(bool end)
-    {
-        this.isStart = end;
-    }
-
     public void GameStart()
     {
-        isStart = true;
+        SceneManager.LoadScene("GameScene");
     }
+
+
 }

@@ -5,22 +5,17 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    private int score;
-    public Text scoreResult;
 
-    public void setScore(int score)
-    {
-        this.score = score;
-    }
-    // Start is called before the first frame update
+    public Text scoreResult;
+    private Player player;
+
     void Start()
     {
-        
+        player = FindObjectOfType<Player>();
     }
-
     // Update is called once per frame
     void Update()
     {
-        scoreResult.text = score.ToString();
+        scoreResult.text = "점수 : "+player.getScore();
     }
 }

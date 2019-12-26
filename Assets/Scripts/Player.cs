@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("플레이어 애니메이션 속성")]
     public GameObject anim;
+    private int score = 0;
     private Animator animator;
-    private ButtonManager startBtn;
+
 
     void Start()
     {
         animator = anim.GetComponent<Animator>();
-        startBtn = GetComponent<ButtonManager>();
     }
 
     void Update()
     {
-        if (startBtn.GetIsStart())
-        {
+
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 WalkAnimation();
@@ -33,8 +33,13 @@ public class Player : MonoBehaviour
                 JumpAnimation();
                 transform.Translate(Vector3.up * 4 * Time.deltaTime);
 
-            }
         }
+        else
+        {
+            animator.SetBool("walk", false);
+            animator.SetBool("jump", false);
+        }
+        
     }
     void WalkAnimation()
     {
@@ -47,5 +52,13 @@ public class Player : MonoBehaviour
         animator.SetBool("jump", true);
         
     }
-
+   
+   public  void AddScore(int addNum)
+    {
+        score += addNum;
+    }
+    public int getScore()
+    {
+        return score;
+    }
 }
