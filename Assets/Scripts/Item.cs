@@ -20,6 +20,10 @@ public class Item : MonoBehaviour
             this.gameObject.SetActive(false);
    
     }
+    void OnTriggerEnd(Collider other)
+    {
+
+    }
     
     void Update()
     {
